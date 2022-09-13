@@ -1,4 +1,10 @@
-x = 20
-y = 6
+a = 20
+b = 6
 
-print("x + y = ", x + y)
+print("a + b = ", a + b)
+print("a - b = ", a - b)
+print("a * b = ", a * b)
+print("a / b = ", a / b)
+print("a // b = ", a // b)
+print("a % b = ", a % b)
+print("a ** b = ", a ** b)
