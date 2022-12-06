@@ -12,6 +12,15 @@ def init(dataBelanjaan) :
     dataBelanjaan.append(["MB004","Garam", 4,20000])
     dataBelanjaan.append(["MB005","Gula", 1,30000])
 
+def pengurutan(dataBelanjaan,indeks=0):
+    for i in range(1,len(dataBelanjaan)) :
+        for j in range(i+1, len(dataBelanjaan)):
+            if(dataBelanjaan[i][indeks]<dataBelanjaan[j][indeks]):
+                tmp = dataBelanjaan[j]
+                dataBelanjaan[j]= dataBelanjaan[i]
+                dataBelanjaan[i]= tmp
+
+#    return tmp
 
 def tampilkanData(dataBelanjaan):
     print("Data Belanjaan")
@@ -63,7 +72,7 @@ dataBelanjaan=[["Kode Barang","Nama Barang", 0,0]]
 print("Toko Kelontong Medan Berkah")
 namaPelanggan = input("Masukkan Nama Pelanggan\t:\t")
 init(dataBelanjaan)
-while(pilihanMenu!=5) :
+while(pilihanMenu!=6) :
     menu()
     #terima input menu dari user
     pilihanMenu = int(input("Pilih Menu\t:\t"))
@@ -77,6 +86,8 @@ while(pilihanMenu!=5) :
         editData(dataBelanjaan)
     elif(pilihanMenu==4) :
         hapusData(dataBelanjaan)
+    elif(pilihanMenu==5) :
+        pengurutan(dataBelanjaan,3)
     elif(pilihanMenu==6) :
         exit()
     else:
