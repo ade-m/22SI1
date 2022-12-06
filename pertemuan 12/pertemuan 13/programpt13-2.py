@@ -5,6 +5,14 @@
 #4 hapus data
 #5 exit
 
+def init(dataBelanjaan) :
+    dataBelanjaan.append(["MB001","beras", 1,145000])
+    dataBelanjaan.append(["MB002","K.K. D. Kelinci", 1,34000])
+    dataBelanjaan.append(["MB003","Sirup Kurnia", 1,22000])
+    dataBelanjaan.append(["MB004","Garam", 4,20000])
+    dataBelanjaan.append(["MB005","Gula", 1,30000])
+
+
 def tampilkanData(dataBelanjaan):
     print("Data Belanjaan")
     print("[Kode Barang]\tNama Barang\tQTY\tTotal")
@@ -45,7 +53,8 @@ def menu():
     print("2. Tambah Data Belanjaan")
     print("3. Edit Data Belanjaan")
     print("4. Hapus Data Belanjaan")
-    print("5. Exit")
+    print("5. Urutkan Data Belanjaan")
+    print("6. Exit")
 
 #deklarasi
 namaPelanggan =""
@@ -53,7 +62,7 @@ pilihanMenu= 1
 dataBelanjaan=[["Kode Barang","Nama Barang", 0,0]]
 print("Toko Kelontong Medan Berkah")
 namaPelanggan = input("Masukkan Nama Pelanggan\t:\t")
-
+init(dataBelanjaan)
 while(pilihanMenu!=5) :
     menu()
     #terima input menu dari user
@@ -68,7 +77,7 @@ while(pilihanMenu!=5) :
         editData(dataBelanjaan)
     elif(pilihanMenu==4) :
         hapusData(dataBelanjaan)
-    elif(pilihanMenu==5) :
+    elif(pilihanMenu==6) :
         exit()
     else:
         menu()
